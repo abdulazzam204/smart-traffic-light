@@ -2,3 +2,5 @@ dataset/
 fomo-setup/
 models/
 test-model/
+venv/
+tf-venv/
