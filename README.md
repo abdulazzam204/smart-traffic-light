@@ -17,8 +17,6 @@ Traditional traffic lights use fixed timers, leading to unnecessary waiting time
     * **Max-Out:** Forces a switch if a lane waits too long.
 * **Bi-Directional Comms:** The ESP32 pulls data (GET) and pushes its current status (POST) back to the dashboard.
 
----
-
 ## Hardware Requirements
 
 | Component | Quantity | Description |
@@ -29,8 +27,6 @@ Traditional traffic lights use fixed timers, leading to unnecessary waiting time
 | **Resistors (220Ω)** | 8 | Current limiting for LEDs. |
 | **Breadboard & Wires** | 1 | For circuit assembly. |
 | **Host Computer** | 1 | Laptop, PC, or Raspberry Pi 4 to run the Python CV server. |
-
----
 
 ## Software Setup
 
@@ -90,8 +86,6 @@ Traditional traffic lights use fixed timers, leading to unnecessary waiting time
     ```
 4.  **Upload:** Connect your ESP32 via USB and upload the code.
 
----
-
 ## Circuit Diagram (Pin Mapping)
 
 Connect your LEDs to the ESP32 pins as defined in the code:
@@ -105,8 +99,6 @@ Connect your LEDs to the ESP32 pins as defined in the code:
 
 *(Note: Ensure common ground between LEDs and ESP32).*
 
----
-
 ## Usage
 
 1.  **Start the Python Server:** It will open a window showing the live stream with bounding boxes.
@@ -117,21 +109,15 @@ Connect your LEDs to the ESP32 pins as defined in the code:
     * It will continuously post its status (Active Lane, Phase) back to the server.
     * The Python window will display the overlay: `ESP: Lane X | ADAPTIVE`.
 
----
-
 ## System Architecture
 
 ![System Architecture Diagram](docs/pictures/system-architecture-diagram.png)
-
----
 
 ## Project Structure
 
 * `server.py` : Main backend script. Runs Flask, YOLO Inference on CCTV feed, and API for intersection info.
 * `smartTraffic.ino` : Code for ESP32. Handles state machine, communication with server, and LED control.
 * `detect_traffic.tflite` : The quantized custom-trained YOLOv11 model.
-
----
 
 ## Group Members
 
